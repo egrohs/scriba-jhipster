@@ -1,0 +1,48 @@
+{
+  "name": "PHARMACO",
+  "fields": [
+    {
+      "fieldName": "substance",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "commercialName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "concentration",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "mETRIC",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "units",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "packing",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "pRESCRIPTION",
+      "otherEntityRelationshipName": "pHARMACO",
+      "relationshipName": "pharmacos"
+    }
+  ],
+  "changelogDate": "20200630010700",
+  "entityTableName": "pharmaco",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

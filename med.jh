@@ -1,0 +1,60 @@
+
+entity PATIENT {
+  ID Long required unique,
+  NAME String required,
+  BIRTHDATE Instant required,
+  SEX String required,
+  CPF String required unique minlength(14) maxlength(14) pattern(/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/),
+  RG String required unique,
+  RGRELEASER String,
+  RESIDENCE String required,
+  NUMBER String required,
+  COMPLEMENT String,
+  CITY String required,
+  STATE String required,
+  ZIP String required,
+  MOBILEDDD String required,
+  MOBILENUM String required,
+  EMAIL String required,
+  OCCUPATION String,
+  REFERRER String,
+  OBS String, //(MEMO)
+  NFPAYERNAME String required, //(default = nome do pac)
+  NFPAYERCPF String required, //(default = cpf do pac)
+  ACTIVE Boolean required
+}
+
+entity EVENT {
+  ID Long required unique,
+  IDPATIENT Long required,
+  //CPFPATIENT NOT NULL UK //???? (trigger popula ao salvar)
+  EVENTDT Instant required, //(dd/mm/aaaa hh:mm:ss)
+  OBS String //(TXT_MEMO)
+}
+
+entity PRESCRIPTION {
+  //CPF_PATIENT NOT NULL UK ????(trigger popula ao salvar)
+  DATAIN Instant,
+  DATAOUT Instant,
+  QNT Long,
+  OBS String,
+}
+
+entity PHARMACO {
+  ID Long required unique,
+  Substance String,
+  CommercialName String,
+  Concentration Long,
+  METRIC String,
+  Units String,
+  Packing String,
+}
+
+relationship OneToMany {
+	PATIENT to EVENT{events},
+    EVENT to PRESCRIPTION{prescriptions},
+}
+
+relationship ManyToOne {
+  PRESCRIPTION to PHARMACO{pharmacos}
+}

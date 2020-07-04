@@ -1,0 +1,164 @@
+{
+  "name": "PATIENT",
+  "fields": [
+    {
+      "fieldName": "nAME",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "bIRTHDATE",
+      "fieldType": "Instant",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "sEX",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "cPF",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "unique",
+        "minlength",
+        "maxlength",
+        "pattern"
+      ],
+      "fieldValidateRulesMinlength": "14",
+      "fieldValidateRulesMaxlength": "14",
+      "fieldValidateRulesPattern": "^\\d{3}\\.\\d{3}\\.\\d{3}\\-\\d{2}$"
+    },
+    {
+      "fieldName": "rG",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "unique"
+      ]
+    },
+    {
+      "fieldName": "rGRELEASER",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rESIDENCE",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "nUMBER",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "cOMPLEMENT",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cITY",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "sTATE",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "zIP",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "mOBILEDDD",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "mOBILENUM",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "eMAIL",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "oCCUPATION",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rEFERRER",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "oBS",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nFPAYERNAME",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "nFPAYERCPF",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "aCTIVE",
+      "fieldType": "Boolean",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "eVENT",
+      "otherEntityRelationshipName": "events",
+      "relationshipName": "eVENT"
+    }
+  ],
+  "changelogDate": "20200630010400",
+  "entityTableName": "patient",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "PRESCRIPTION",
+  "fields": [
+    {
+      "fieldName": "dATAIN",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dATAOUT",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "qNT",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "oBS",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "pHARMACO",
+      "otherEntityRelationshipName": "pharmacos"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "eVENT",
+      "otherEntityRelationshipName": "pRESCRIPTION",
+      "relationshipName": "prescriptions",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200630010600",
+  "entityTableName": "prescription",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
